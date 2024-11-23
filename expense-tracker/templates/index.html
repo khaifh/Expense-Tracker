@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Expense Tracker</h1>
+                <h2>Monthly Budget: <span class="light-grey">{{ budget }}</span></h2>
+                <h2>Total Expenses: <span class="light-grey">{{ total_expense }}</span></h2>
+                {% if warning %}
+                <p class="warning">⚠️ Warning: You exceeded your budget!</p>
+                {% endif %}
+            </div>
+
+
+            <div class="button-group">
+                <a href="/view-options" class="btn">View Expenses</a>
+                <a href="/add-expense" class="btn add-expense-btn">Add Expense</a>
+                <a href="/set-budget" class="btn">Set Budget</a>
+            </div>
+        </header>
+
+        <main>
+            {% if expenses %}
+            <h3>Expenses</h3>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                {% for expense in expenses %}
+                <tr>
+                    <td>{{ expense.category }}</td>
+                    <td>{{ expense.amount }}</td>
+                    <td>{{ expense.date }}</td>
+                    <td>{{ expense.description }}</td>
+                    <td>
+                        <a href="{{ url_for('delete_expense', expense_id=expense.id) }}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p>No expenses found.</p>
+            {% endif %}
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+header h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #999999;
+    /* Light grey color for Monthly Budget and Total Expenses */
+}
+
+.warning {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #007bff;
+    /* Default blue button */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+.button-group .btn.add-expense-btn {
+    background-color: #28a745;
+
+}
+
+.button-group .btn.add-expense-btn:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.delete-btn {
+    color: white;
+    background-color: #ff4d4d;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* General Form Styles */
+.search-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group {
+    margin: 0 10px;
+}
+
+.form-group input,
+.form-group select {
+    width: 200px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-btn i {
+    margin-right: 5px;
+}
+
+.search-btn:hover {
+    background-color: #007bff;
+    /* Removed hover color change */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust the header layout on smaller screens */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Stack the buttons vertically in smaller screens */
+    .button-group {
+        flex-direction: column;
+    }
+}
